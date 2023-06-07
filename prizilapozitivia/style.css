@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, p {
     text-align: center;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
     h1, h2, h3, h4, h5, p {
         text-align: unset;
     }
@@ -56,17 +56,27 @@ h1 {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 750px) {
     h1 {
         font-size: 2.5em;
+        min-width: 300px;
     }
 }
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 3.8em;
+        width: 400px;
+    }
+}
+
 
 h2 {
     text-transform: uppercase;
     font-size: 1.8em;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
+
 
 h3 {
     font-size: 1.5em;
@@ -78,12 +88,32 @@ h3 {
         font-size: 1.4em;
     }
 }
+
+@media (min-width: 1200px) {
+    h3 {
+        font-size: 1.8em;
+        width: 400px;
+    }
+}
     
 p {
     font-size: 1.15em;
     line-height: 1.4;
     max-width: 300px;
     margin-inline: auto;
+}
+
+@media (min-width: 600px) {
+    p {
+        margin-inline: unset;
+    }
+}
+
+@media (min-width:1200px) {
+    p {
+        max-width: 500px;
+        line-height: 1.6;
+    }
 }
 
 .bold {
@@ -125,6 +155,15 @@ img {
     }
 }
 
+@media (min-width: 900px) {
+    .layout-container {
+        max-width: 850px;
+        margin-inline: auto;
+        padding: unset;
+    }
+}
+
+
 @media (min-width: 1200px) {
     .layout-container {
         max-width: 1100px;
@@ -138,14 +177,26 @@ footer .nav-list {
     padding: 0;
 }
 
-@media (min-width: 500px) {
-    .mobile-only {
+@media (min-width: 600px) {
+    .only-mobile {
         display: none !important;
     }
 }
 
-@media (max-width: 499px){
-    .tablet-only {
+@media (max-width: 599px){
+    .no-mobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1279px) {
+    .only-desktop {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .no-desktop {
         display: none !important;
     }
 }
@@ -175,13 +226,32 @@ footer .nav-list {
     }
 }
 
-#home, #contact {
+#home, #contact, #about {
     scroll-margin-top: 76px;
 }
 
 @media (min-width: 650px) {
     #home, #contact {
         scroll-margin-top: 94px;
+    }
+}
+
+.hero, .about, .leader, .orgs, .contact, .pozitiva {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media (min-width: 700px) {
+    .hero, .about, .leader, .orgs, .contact, .pozitiva {
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+}
+
+
+@media (min-width: 700px) {
+    .contact h2, .pozitiva h2{
+        margin-bottom: 15px;
     }
 }
 
@@ -193,12 +263,10 @@ footer .nav-list {
     padding-top: 20px;
     padding-bottom: 20px;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 100;
     background-color: hsl(var(--clr-primary));
-    z-index: 300;
+    z-index: 1000;
   }
   
 .nav-container .nav-flex {
@@ -318,14 +386,14 @@ nav .social a  {
 
 .hero {
     background-color: hsl(var(--clr-primary));
-    padding-top: 30px;
-    padding-bottom: 70px;
     position: relative;
+    padding-top: 20px;
 }
 
 @media (min-width: 500px) {
     .hero {
-        max-height: calc(100vh - 76px);
+        height: calc(100vh - 76px);
+        min-height: 375px;
         padding-bottom: 0;
     }
 }
@@ -342,8 +410,8 @@ nav .social a  {
     }
 }
 
-.hero h1.mobile-only {
-    margin-bottom: 10px;
+.hero .hero-content {
+    z-index: 199;
 }
 
 .hero .hero-content ul {
@@ -352,11 +420,23 @@ nav .social a  {
     margin: 0;
 }
 
-.hero .hero-content h1 {
-    margin-bottom: 20px;
+.hero h1 {
+    margin-bottom: 25px;
 }
 
-.hero .hero-content h3 {
+@media (min-width: 500px) {
+    .hero .hero-content h1 {
+        display: block !important;
+    }
+}
+
+@media (min-width: 500px) {
+    .hero h1.only-mobile {
+        display: none;
+    }
+}
+
+.hero h3 {
     margin-bottom: 20px;
 }
 
@@ -367,6 +447,7 @@ nav .social a  {
     }
 }
 
+
 @media (min-width: 500px) {
     .hero .img-container {
         margin: 0;
@@ -376,7 +457,7 @@ nav .social a  {
 .hero .hero-img {
     transform: scaleX(-1);
     margin-bottom: 20px;
-    max-height: 375px;
+    min-height: 375px;
     width: 100vw;
     object-fit: cover;
     object-position: top;
@@ -389,9 +470,7 @@ nav .social a  {
         margin-bottom: 0;
         margin-left: 15px;
         margin-top: -30px;
-        width: unset;
-        /* min-height: calc(100vh - 76px); */
-        max-height: 450px;
+        object-fit: cover;
         object-position: top right;
     }
 }
@@ -404,6 +483,7 @@ nav .social a  {
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 101;
 }
 
 @media (min-width: 500px) {
@@ -418,11 +498,11 @@ nav .social a  {
 
 .about {
     background-color: hsl(var(--clr-secondary));
-    padding-top: 30px;
-    padding-bottom: 40px;
+    z-index: 201;
+    position: relative;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
     .about .about-content {
         display: flex;
         gap: 40px;
@@ -441,6 +521,9 @@ nav .social a  {
 
 .about .about-content .about-images img {
     margin-bottom: 20px;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: top;
 }
 
 /* ------------------- */
@@ -448,8 +531,6 @@ nav .social a  {
 /* ------------------- */
 
 .leader {
-    padding-top: 30px;
-    padding-bottom: 40px;
 }
 
 /* ------------------- */
@@ -458,15 +539,13 @@ nav .social a  {
 
 .orgs {
     background-color: hsl(var(--clr-primary));
-    padding-top: 30px;
-    padding-bottom: 40px;
 }
 
 .orgs .grid-container {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    gap: 35px;
 }
   
 .orgs .grid-container .grid-item {
@@ -491,13 +570,15 @@ nav .social a  {
     }
 }
 
+.orgs h2 {
+    margin-bottom: 40px;
+}
+
 /* ------------------- */
 /* Contact                */
 /* ------------------- */
 
 .contact {
-    padding-top: 30px;
-    padding-bottom: 40px;
     background-color: hsl(var(--clr-secondary-dark));
 }
 
@@ -510,11 +591,31 @@ nav .social a  {
     flex-direction: column-reverse;
 }
 
+@media (min-width: 600px) {
+    .contact .contact-flex {
+        flex-direction: row;
+        gap: 30px;
+    }
+}
+
 .contact .contact-img {
-    height: 200px;
+    height: 300px;
     width: 100%;
     object-fit: cover;
+    object-position: 0% 45%;
     margin-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+    .contact .contact-img {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact .contact-img {
+        height: 400px;
+    }
 }
 
 .contact .contact-content p {
@@ -527,6 +628,12 @@ nav .social a  {
     gap: 30px;
 }
 
+@media (min-width: 600px) {
+    .contact .contact-content .icons {
+        justify-content: unset;
+    }
+}
+
 .contact .contact-content .icons i {
     font-size: 40px;
 }
@@ -536,8 +643,6 @@ nav .social a  {
 /* ------------------- */
 
 .pozitiva {
-    padding-top: 30px;
-    padding-bottom: 40px;
 }
 
 .pozitiva .pozitiva-flex {
@@ -545,8 +650,33 @@ nav .social a  {
     flex-direction: column-reverse;
 }
 
+@media (min-width: 600px) {
+    .pozitiva .pozitiva-flex {
+        flex-direction: row-reverse;
+        gap: 30px;
+    }
+}
+
 .pozitiva .pozitiva-img {
     margin-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+    .pozitiva .pozitiva-img {
+        max-height: 300px;
+        width: 60%;
+        object-fit: cover;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pozitiva .pozitiva-img {
+        max-height: unset;
+        width: 60%;
+        object-fit: cover;
+        margin-bottom: 0;
+    }
 }
 
 .pozitiva .pozitiva-content p:not(:last-child) {
@@ -564,8 +694,18 @@ footer {
     color: #fff;
 }
 
+footer p {
+    text-align: center;
+}
+
 footer a i {
     font-size: 40px;
+}
+
+@media (min-width: 600px) {
+    footer a i {
+        font-size: 30px;
+    }
 }
 
 footer .footer-flex {
@@ -573,6 +713,13 @@ footer .footer-flex {
     flex-direction: column;
     align-items: center;
     gap: 35px;
+}
+
+@media (min-width: 600px) {
+    footer .footer-flex {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 footer .footer-contact p {
