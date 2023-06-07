@@ -2,7 +2,7 @@
 /* Custom properties   */
 /* ------------------- */
 :root {
-    --clr-primary: 196 90% 50%;
+    --clr-primary: 196 92% 69%;
     --clr-secondary: 347 66% 79%;
     --clr-secondary-dark: 347 66% 59%;
     --clr-accent: 40 100% 50%;
@@ -70,6 +70,13 @@ h1 {
     }
 }
 
+@media (min-width: 1920px) {
+    h1 {
+        font-size: 4.7em;
+        width: 530px;
+    }
+}
+
 
 h2 {
     text-transform: uppercase;
@@ -83,6 +90,7 @@ h3 {
     font-weight: 500;
 }
 
+
 @media (min-width: 500px) {
     h3 {
         font-size: 1.4em;
@@ -93,6 +101,13 @@ h3 {
     h3 {
         font-size: 1.8em;
         width: 400px;
+    }
+}
+
+@media (min-width: 1920px) {
+    h3 {
+        font-size: 3em;
+        width: 600px;
     }
 }
     
@@ -302,7 +317,7 @@ nav .social a  {
     nav.active {
         display: block;
         position: absolute;
-        top: 72px;
+        top: 70px;
         left: 0;
         width: 100%;
         height: 100vh;
@@ -443,10 +458,20 @@ nav .social a  {
 @media (min-width: 500px) {
     .hero .hero-content h3 {
         margin-bottom: 40px;
-        width: 240px;
     }
 }
 
+@media (min-width: 1920px) {
+    .hero .hero-content h3 {
+        margin-bottom: 60px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero .hero-content p {
+        font-size: 1.5rem;
+    }
+}
 
 @media (min-width: 500px) {
     .hero .img-container {
@@ -547,6 +572,12 @@ nav .social a  {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 35px;
 }
+
+@media (min-width: 1280px) {
+    .orgs .grid-container {
+        gap: 100px;
+    }
+}
   
 .orgs .grid-container .grid-item {
     width: 100%;
@@ -572,6 +603,12 @@ nav .social a  {
 
 .orgs h2 {
     margin-bottom: 40px;
+}
+
+@media (min-width: 1280px) {
+    .orgs h2 {
+        margin-bottom: 70px;
+    }
 }
 
 /* ------------------- */
@@ -638,6 +675,11 @@ nav .social a  {
     font-size: 40px;
 }
 
+@media (min-width: 1200px) {
+    .contact .contact-content .icons i {
+        font-size: 60px;
+    }
+}
 /* ------------------- */
 /* Pozitiva                */
 /* ------------------- */
@@ -654,6 +696,7 @@ nav .social a  {
     .pozitiva .pozitiva-flex {
         flex-direction: row-reverse;
         gap: 30px;
+        justify-content: space-between;
     }
 }
 

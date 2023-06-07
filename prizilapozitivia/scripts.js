@@ -17,3 +17,12 @@ mobileBars.addEventListener("click", () => {
         isOpen = false;
     }
 })
+
+nav.addEventListener("click", () => {
+    if (isOpen) {
+        menuIcon.classList.remove('fa-x');
+        menuIcon.classList.add("fa-bars");
+        nav.classList.remove("active");
+        isOpen = false;
+    }
+})
