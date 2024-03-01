@@ -1,6 +1,6 @@
 ##
 
-## 🤝 Contributing
+## Contributing
 
 ### Clone the repo
 
