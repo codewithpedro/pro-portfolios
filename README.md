@@ -1,7 +1,8 @@
 ##
 
-# Contributing
+#3 Contributing
 ##
+Tring to just  pass the github on boot.dev
 
 ### Clone the repo
 
